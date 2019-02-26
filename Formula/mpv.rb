@@ -7,6 +7,9 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git"
 
   bottle :unneeded
+  
+  option "with-lua", "Enable lua support"
+  option "with-javascript", "Enable javascript support"
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
@@ -17,12 +20,13 @@ class Mpv < Formula
   depends_on "libarchive"
   depends_on "libass"
   depends_on "little-cms2"
-  depends_on "lua@5.1"
 
-  depends_on "mujs"
   depends_on "uchardet"
   depends_on "vapoursynth"
   depends_on "youtube-dl"
+  
+  depends_on "lua@5.1" => :optional
+  depends_on "mujs" => :optional
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
@@ -33,9 +37,7 @@ class Mpv < Formula
     args = %W[
       --prefix=#{prefix}
       --enable-html-build
-      --enable-javascript
       --enable-libmpv-shared
-      --enable-lua
       --enable-libarchive
       --enable-uchardet
       --confdir=#{etc}/mpv
@@ -45,6 +47,9 @@ class Mpv < Formula
       --enable-zsh-comp
       --zshdir=#{zsh_completion}
     ]
+    
+    args << "--enable-lua" if build.with? "lua"
+    args << "--enable-javascript" if build.with? "javascript"
 
     system "./bootstrap.py"
     system "python3", "waf", "configure", *args
