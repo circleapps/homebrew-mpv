@@ -32,19 +32,20 @@ class Mpv < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --enable-html-build
       --enable-libmpv-shared
+      --disable-cplugins
       --enable-libarchive
       --disable-libass
       --disable-libass-osd
       --disable-lua
       --disable-javascript
+      --disable-uchardet
+      --disable-libarchive
       --enable-uchardet
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
       --docdir=#{doc}
-      --enable-zsh-comp
       --zshdir=#{zsh_completion}
     ]
 
