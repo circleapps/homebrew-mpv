@@ -40,7 +40,6 @@ class Mpv < Formula
       --disable-javascript
       --disable-uchardet
       --disable-libarchive
-      --enable-uchardet
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
