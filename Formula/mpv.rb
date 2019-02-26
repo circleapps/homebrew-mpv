@@ -30,23 +30,23 @@ class Mpv < Formula
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
 
+      # --disable-cplugins
+      #      --disable-uchardet
+      # --disable-libarchive
+    
     args = %W[
       --prefix=#{prefix}
       --enable-libmpv-shared
-      --disable-cplugins
       --disable-libass
       --disable-libass-osd
       --disable-lua
       --disable-javascript
-      --disable-uchardet
-      --disable-libarchive
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
     ]
-
 
     system "./bootstrap.py"
     system "python3", "waf", "configure", *args
