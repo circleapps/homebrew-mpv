@@ -19,7 +19,6 @@ class Mpv < Formula
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "little-cms2"
-  # depends_on "uchardet"
   depends_on "vapoursynth"
   depends_on "youtube-dl"
   
@@ -31,7 +30,6 @@ class Mpv < Formula
     ENV["LC_ALL"] = "C"
 
       # --disable-cplugins
-      #      --disable-uchardet
       # --disable-libarchive
     
     args = %W[
