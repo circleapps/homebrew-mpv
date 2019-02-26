@@ -34,7 +34,6 @@ class Mpv < Formula
       --prefix=#{prefix}
       --enable-libmpv-shared
       --disable-cplugins
-      --enable-libarchive
       --disable-libass
       --disable-libass-osd
       --disable-lua
