@@ -18,7 +18,7 @@ class Mpv < Formula
   depends_on "circleapps/ffmpeg/ffmpeg"
   depends_on "jpeg"
   #depends_on "libarchive"
-  depends_on "youtube-dl"
+  #depends_on "youtube-dl"
   
 
   def install
