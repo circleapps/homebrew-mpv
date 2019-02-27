@@ -18,7 +18,7 @@ class Mpv < Formula
   depends_on "circleapps/ffmpeg/ffmpeg"
   depends_on "jpeg"
   depends_on "libarchive"
-  depends_on "little-cms2"
+  #depends_on "little-cms2"
   depends_on "vapoursynth"
   depends_on "youtube-dl"
   
@@ -40,6 +40,7 @@ class Mpv < Formula
       --disable-lua
       --disable-javascript
       --disable-uchardet
+      --disable-lcms2
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
