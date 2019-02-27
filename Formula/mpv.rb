@@ -19,7 +19,7 @@ class Mpv < Formula
   depends_on "jpeg"
   depends_on "libarchive"
   #depends_on "little-cms2"
-  depends_on "vapoursynth"
+  #depends_on "vapoursynth"
   depends_on "youtube-dl"
   
 
@@ -41,6 +41,8 @@ class Mpv < Formula
       --disable-javascript
       --disable-uchardet
       --disable-lcms2
+      --disable-vapoursynth
+      --disable-vapoursynth-lazy
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
