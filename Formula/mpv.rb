@@ -17,9 +17,7 @@ class Mpv < Formula
 
   depends_on "circleapps/ffmpeg/ffmpeg"
   depends_on "jpeg"
-  depends_on "libarchive"
-  #depends_on "little-cms2"
-  #depends_on "vapoursynth"
+  #depends_on "libarchive"
   depends_on "youtube-dl"
   
 
@@ -35,6 +33,7 @@ class Mpv < Formula
     args = %W[
       --prefix=#{prefix}
       --enable-libmpv-shared
+      --disable-libarchive
       --disable-libass
       --disable-libass-osd
       --disable-lua
