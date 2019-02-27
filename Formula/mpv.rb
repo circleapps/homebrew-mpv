@@ -28,7 +28,6 @@ class Mpv < Formula
     ENV["LC_ALL"] = "C"
 
       # --disable-cplugins
-      # --disable-libarchive
     
     args = %W[
       --prefix=#{prefix}
@@ -42,6 +41,7 @@ class Mpv < Formula
       --disable-lcms2
       --disable-vapoursynth
       --disable-vapoursynth-lazy
+      --disable-libbluray
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
