@@ -13,7 +13,7 @@ class Mpv < Formula
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  #depends_on "python" => :build
 
   depends_on "circleapps/ffmpeg/ffmpeg"
   depends_on "jpeg"
