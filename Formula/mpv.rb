@@ -34,6 +34,7 @@ class Mpv < Formula
     args = %W[
       --prefix=#{prefix}
       --enable-libmpv-shared
+      --disable-swift
       --disable-libarchive
       --disable-lua
       --disable-javascript
