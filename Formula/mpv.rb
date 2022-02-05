@@ -39,7 +39,7 @@ class Mpv < Formula
       --disable-uchardet
       --disable-lcms2
       --disable-vapoursynth
-      --disable-vapoursynth-lazy
+      #--disable-vapoursynth-lazy
       --disable-libbluray
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
