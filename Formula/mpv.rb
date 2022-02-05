@@ -27,19 +27,19 @@ class Mpv < Formula
     ENV["LC_ALL"] = "C"
 
       # --disable-cplugins
+      #--disable-libass
+      #--disable-libass-osd
+      #--disable-vapoursynth-lazy
     
     args = %W[
       --prefix=#{prefix}
       --enable-libmpv-shared
       --disable-libarchive
-      #--disable-libass
-      #--disable-libass-osd
       --disable-lua
       --disable-javascript
       --disable-uchardet
       --disable-lcms2
       --disable-vapoursynth
-      #--disable-vapoursynth-lazy
       --disable-libbluray
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
