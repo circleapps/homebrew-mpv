@@ -6,14 +6,14 @@ class Mpv < Formula
   revision 3
   head "https://github.com/mpv-player/mpv.git"
 
-  bottle :unneeded
+  #bottle :unneeded
   
   option "with-lua", "Enable lua support"
   option "with-javascript", "Enable javascript support"
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
-  #depends_on "python" => :build
+  depends_on "python@3.9" => :build
 
   depends_on "circleapps/ffmpeg/ffmpeg"
   depends_on "jpeg"
@@ -49,9 +49,9 @@ class Mpv < Formula
       --zshdir=#{zsh_completion}
     ]
 
-    system "./bootstrap.py"
-    system "python3", "waf", "configure", *args
-    system "python3", "waf", "install"
+    system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
+    system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
+    system Formula["python@3.9"].opt_bin/"python3", "waf", "install"
 
     system "python3", "TOOLS/osxbundle.py", "build/mpv"
     prefix.install "build/mpv.app"
